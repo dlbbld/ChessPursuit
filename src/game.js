@@ -184,292 +184,112 @@ window.onload = function(){
 			'',
 			'kkkkkkkk'
 		);
+		
 
-		// first pawn
+		//BEGIN new level
+		
+		//knights level one dungeon
 		block(
-			{showThreat:'p'},
-			'',
-			'',
-			'    p',
-			'',
-			'',
-			'',
-			'',
-			''
-		);
+				'    p   ',
+				'     b  ',
+				'',
+				'',
+				'',
+				'      k ',
+				'  k     ',
+				' k     k',
+				'k  k   k',
+				'k       ',
+				'      k ',
+				'',
+				'',
+				'',
+				'',
+				'',
+				'',
+				'',
+				''
+			);
 
-		// scattered pawns
+		checkPoint();
+		
+
+		// rook and bishop dungeon
 		block(
-			'  pppp',
-			'  pppp',
-			'',
-			'  p',
-			'',
-			'     p',
-			'',
-			' p'
-		);
+				'',
+				'',
+				'',
+				'',
+				'',
+				'',
+				'p p p   ',
+				' p p    ',
+				'rbrbrbrb',
+				'brbrbrbr',
+				'rbrbrbrb',
+				'brbrbrbr',
+				'rbrrrbrb',
+				'brbrbrbr',
+				' p b    ',
+				'',
+				'',
+				''
+			);
 
-		// pawn rows
-		block(
-			'',
-			'pppppp',
-			'',
-			'  pppppp',
-			'',
-			'pppppp',
-			'',
-			''
-		);
-
-		// triangle
-		block(
-			'',
-			'pp   ppp',
-			'  p p',
-			'   p',
-			'',
-			'',
-			'',
-			''
-		);
-
-		// sawtooth
-		block(
-			'',
-			'   pp',
-			'p p  p p',
-			' p    p',
-			'',
-			'',
-			'',
-			''
-		);
-
-		// wedges
-		block(
-			'',
-			'    ppp',
-			'     p',
-			'ppp',
-			' p   ppp',
-			'      p',
-			'',
-			''
-		);
-
-		//CHECK POINT 1
 		checkPoint();
 
-		// first rook
+		
+		//knights level two dungeon
 		block(
-			{showThreat:'r'},
-			'',
-			'   p',
-			'',
-			'   r',
-			'',
-			'   p',
-			'',
-			''
-		);
+				'',
+				'',
+				'',
+				'',
+				'',
+				'',
+				'',
+				'   kk   ',
+				'     kk ',
+				'',
+				'     k  ',
+				'k kkk   ',
+				'',
+				'',
+				'kkk k   ',
+				'',
+				'',
+				'',
+				'',
+				'',
+				''
+			);
 
-		// rook diag
-		block(
-			'',
-			'',
-			'r',
-			' r',
-			'  r',
-			'   r',
-			'    r',
-			'     r',
-			'pppppp'
-		);
-
-		// rook rows
-        block(
-            '',
-            '',
-            '',
-            '       p',
-            '    rp r',
-            '',
-            '',
-            'pp',
-            'r   p  p',
-            'p'
-        );
-
-		// rook labyrinth
-		block(
-            '',
-            'p     r',
-            'r     p',
-            'r    p',
-            '',
-            '   p',
-            '   p',
-            'p  ppppp',
-            ''
-        );
-
-		//CHECK POINT 2
-        checkPoint();
-
-		//10 first bishop
-		block(
-			{showThreat:'b'},
-			'',
-			'',
-			'',
-			'',
-			'...b',
-			'',
-			'',
-			'',
-			''
-		);
-
-		//11 bishop field
-		block(
-			'',
-			' p p p',
-			'b b b b',
-			'',
-			'',
-			'',
-			'',
-			'',
-			''
-		);
-
-		//12 rooks & bishops simple
-		block(
-			'',
-			'r.p..p.r',
-			'p......p',
-			'',
-			'b      b',
-			'pp....pp',
-			'',
-			''
-		);
-
-
-		//13 pawns, bishops and rooks
-		block(
-			'',
-			'r',
-			' r  p..b',
-			'     ..r',
-			'....p',
-			'...p',
-			'..p',
-			'pp.....p'
-		);
-
-		//CHECK POINT 3
 		checkPoint();
-
-		//14 first knight
+			
+			
+		// rook and bishop and knights dungeon
 		block(
-			{showThreat:'k'},
-			'',
-			'',
-			'   k',
-			'',
-			'',
-			'',
-			'',
-			''
-		);
-
-		//15 knight rows
-		block(
-			'p',
-			'r.....p',
-			'',
-			'',
-			'......kk',
-			'',
-			'pkk',
-			''
-		);
-
-		//rooks bishop and knight
-        block(
-            'p   pppp',
-            'r    b r',
-            '   p b p',
-            '',
-            '',
-            '',
-            ' k',
-            '',
-            '',
-            ''
-        );
-
-        //CHECK POINT 4
-        checkPoint();
-
-        //first land mine
-        block(
-            {showThreat:'l'},
-            '',
-            '',
-            '',
-            '   l',
-            '',
-            '',
-            '',
-            ''
-        );
-
-        //land mines
-        block(
-            'l.llllll',
-            'l.l....l',
-            '..l.llll',
-            '.ll.l   ',
-            'l...l l ',
-            'l.lll l ',
-            'l.    l ',
-            'lllllll '
-        );
-
-		//land mines and pawns
-        block(
-            ' p  pll',
-            ' l p   l',
-            'lpl p p ',
-            '     lp',
-            'll ll l',
-            ' l  l',
-            '',
-            ''
-        );
-
-        //k,r,b,p,l
-        block(
-            '',
-            '  r',
-            '  llk',
-            '     .',
-            '   l ..',
-            '   p  pb',
-            '  . .  l',
-            '  p  l',
-            '',
-            '',
-            '',
-            '',
-            ''
-        );
-
-        //CHECK POINT 5
-        checkPoint();
+				'',
+				'',
+				'',
+				'',
+				'brbrbrrb',
+				'rbrbrbrb',
+				'bbrrbkbr',
+				'brrbkbrb',
+				'kbbrbkrk',
+				'krrbrbrb',
+				'kkbrbrbk',
+				'kbrbrbrr',
+				'  b   b ',
+				'       b',
+				'',
+				'',
+				''
+			);
+		
+		//no checkpoint needed for last level
+		//END new level
 
         block(
             '',
@@ -912,45 +732,75 @@ window.onload = function(){
 
         var dx = 0;
         var dy = 0;
+		var isDiagonal = false;
         if(!keysBlockedUntilAllUp){
 
-            //read keys that were just released or that were pressed just a few frames ago
-            //this leaves some time for a combination (ie: up+right)
-            if(keys.down == KEY_LATENCY || keys.down === 0){
-                dy = -1;
-            }
-            if(keys.up == KEY_LATENCY || keys.up === 0){
-                dy = 1;
-            }
-            if(keys.left == KEY_LATENCY || keys.left === 0){
+			//check diagonal keys
+		    if(keys.diagonalLeftUp == KEY_LATENCY || keys.diagonalLeftUp === 0){
                 dx = -1;
-            }
-            if(keys.right == KEY_LATENCY || keys.right === 0){
+				dy = 1;
+				isDiagonal = true;
+            }	
+			if(keys.diagonalRightUp == KEY_LATENCY || keys.diagonalRightUp === 0){
                 dx = 1;
-            }
-
-            if(dx || dy){
-                //look for a combo: another key that was pressed during the latency
-                if(!dx){
-                    if(keys.left <= KEY_LATENCY && keys.left > 0){
-                        dx = -1;
-                    }
-                    if(keys.right <= KEY_LATENCY && keys.right > 0){
-                        dx = 1;
-                    }
-                }else{
-                    if(keys.up <= KEY_LATENCY && keys.up > 0){
-                        dy = 1;
-                    }
-                    if(keys.down <= KEY_LATENCY && keys.down > 0){
-                        dy = -1;
-                    }
-                }
-                //console.log(keys,dx,dy);
+				dy = 1;
+				isDiagonal = true;
+            }	
+		    if(keys.diagonalLeftDown == KEY_LATENCY || keys.diagonalLeftDown === 0){
+                dx = -1;
+				dy = -1;
+				isDiagonal = true;
+            }	
+			if(keys.diagonalRightDown == KEY_LATENCY || keys.diagonalRightDown === 0){
+                dx = 1;
+				dy = -1;
+				isDiagonal = true;
+            }	
+			if (isDiagonal) {
+				//console.log(keys,dx,dy);
                 movePlayer(player.row+dy, player.col+dx);
 
                 keysBlockedUntilAllUp = true;
-            }
+			} else {
+
+	            //read keys that were just released or that were pressed just a few frames ago
+	            //this leaves some time for a combination (ie: up+right)
+	            if(keys.down == KEY_LATENCY || keys.down === 0){
+	                dy = -1;
+	            }
+	            if(keys.up == KEY_LATENCY || keys.up === 0){
+	                dy = 1;
+	            }
+	            if(keys.left == KEY_LATENCY || keys.left === 0){
+	                dx = -1;
+	            }
+	            if(keys.right == KEY_LATENCY || keys.right === 0){
+	                dx = 1;
+	            }
+	
+	            if(dx || dy){
+	                //look for a combo: another key that was pressed during the latency
+	                if(!dx){
+	                    if(keys.left <= KEY_LATENCY && keys.left > 0){
+	                        dx = -1;
+	                    }
+	                    if(keys.right <= KEY_LATENCY && keys.right > 0){
+	                        dx = 1;
+	                    }
+	                }else{
+	                    if(keys.up <= KEY_LATENCY && keys.up > 0){
+	                        dy = 1;
+	                    }
+	                    if(keys.down <= KEY_LATENCY && keys.down > 0){
+	                        dy = -1;
+	                    }
+	                }
+	                //console.log(keys,dx,dy);
+	                movePlayer(player.row+dy, player.col+dx);
+	
+	                keysBlockedUntilAllUp = true;
+	            }
+			}
         }
 
         var keyName;
@@ -1574,8 +1424,8 @@ window.onload = function(){
 	}
 
 	function ellipseEq(x, a, b){
-		// xÂ²/aÂ² + yÂ²/bÂ² = 1
-		// y = sqrt( (1-xÂ²/aÂ²)*bÂ² )
+		// x²/a² + y²/b² = 1
+		// y = sqrt( (1-x²/a²)*b² )
 		return Math.sqrt( (1-((x*x)/(a*a)))*b*b );
 	}
 
@@ -2265,16 +2115,22 @@ window.onload = function(){
 
 
 	var keyMap = {
-		37: "left", // left arrow
-		65: "left", // a
-		81: "left", // q
-		38: "up",   // up arrow
-		90: "up",	// z
-		87: "up",	// w
-		83: "down",	// d
-		40: "down",
-		39: "right",// right arrow
-		68: "right",//d
+		37: "left", 			// left arrow
+		39: "right",			// right arrow
+		38: "up",   			// up arrow
+		40: "down",				// down arrow
+		65: "left", 			// a
+		68: "right",			// d
+		87: "up",				// w
+		83: "down",				// s
+		//support x as well, with adding diagonal down keys
+		88: "down",				// x
+		81: "diagonalLeftUp", 	// q
+		69: "diagonalRightUp", 	// e
+		//support y and z as often used layouts
+		89: "diagonalLeftDown", // y
+		90: "diagonalLeftDown", // z
+		67: "diagonalRightDown",// e
 		32: "space",
 		27: "esc",
 		13: "enter"
