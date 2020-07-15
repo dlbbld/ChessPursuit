@@ -185,7 +185,6 @@ window.onload = function(){
 			'kkkkkkkk'
 		);
 
-if (false) {
 		// first pawn
 		block(
 			{showThreat:'p'},
@@ -317,7 +316,7 @@ if (false) {
 
 		//CHECK POINT 2.1
         checkPoint();
-}
+
 		//BEGIN first new level
 		//knights only dungeon - level one - a bit tricky
 		block(
@@ -360,7 +359,6 @@ if (false) {
 
 		//CHECK POINT 2.2
         checkPoint();
-if (false) {
 	
 		//10 first bishop
 		block(
@@ -455,7 +453,7 @@ if (false) {
             '',
             ''
         );
-}
+
         //CHECK POINT 4.1
         checkPoint();
 
