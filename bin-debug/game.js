@@ -398,9 +398,52 @@ aa.add( 'checkmate', 1,
             ''
         );
 
-		//CHECK POINT 2
+		//CHECK POINT 2.1
         checkPoint();
 
+		//BEGIN first new level
+		//knights only dungeon - level one - a bit tricky
+		block(
+				'',
+				'     p  ',
+				'',
+				'',
+				'',
+				'      k ',
+				'  k     ',
+				' k     k',
+				'k  k   k',
+				'k       ',
+				'      k ',
+				'',
+				'',
+				'',
+				''
+			);
+
+		// crowded dungeon - level one - rook and bishop
+		block(
+				'',
+				'',
+				'',
+				'',
+				'p p p   ',
+				' p p    ',
+				'rbrbrbrb',
+				'brbrbrbr',
+				'rbrbrbrb',
+				'brbrbrbr',
+				'rbrrrbrb',
+				'brbrbrbr',
+				' p b    ',
+				'',
+				''
+			);
+		//END first new level
+
+		//CHECK POINT 2.2
+        checkPoint();
+	
 		//10 first bishop
 		block(
 			{showThreat:'b'},
@@ -495,7 +538,56 @@ aa.add( 'checkmate', 1,
             ''
         );
 
-        //CHECK POINT 4
+        //CHECK POINT 4.1
+        checkPoint();
+
+		//BEGIN second new level
+		//knights only dungeon - level two - tricky
+		block(
+				'',
+				'',
+				'',
+				'',
+				'   kk   ',
+				'     kk ',
+				'',
+				'     k  ',
+				'k kkk   ',
+				'',
+				'',
+				'kkk k   ',
+				'',
+				'',
+				'',
+				'',
+				''
+			);
+
+		// crowded dungeon - level two - rook, bishop and knights
+		block(
+				'',
+				'',
+				'',
+				'',
+				'brbrbrrb',
+				'rbrbrbrb',
+				'bbrrbkbr',
+				'brrbkbrb',
+				'kbbrbkrk',
+				'krrbrbrb',
+				'kkbrbrbk',
+				'kbrbrbrr',
+				'  b   b ',
+				'       b',
+				'',
+				'',
+				'',
+				'',
+				''
+			);
+		//END second new level
+		
+        //CHECK POINT 4.2
         checkPoint();
 
         //first land mine
@@ -996,45 +1088,75 @@ aa.add( 'checkmate', 1,
 
         var dx = 0;
         var dy = 0;
+		var isDiagonal = false;
         if(!keysBlockedUntilAllUp){
 
-            //read keys that were just released or that were pressed just a few frames ago
-            //this leaves some time for a combination (ie: up+right)
-            if(keys.down == KEY_LATENCY || keys.down === 0){
-                dy = -1;
-            }
-            if(keys.up == KEY_LATENCY || keys.up === 0){
-                dy = 1;
-            }
-            if(keys.left == KEY_LATENCY || keys.left === 0){
+			//check diagonal keys
+		    if(keys.diagonalLeftUp == KEY_LATENCY || keys.diagonalLeftUp === 0){
                 dx = -1;
-            }
-            if(keys.right == KEY_LATENCY || keys.right === 0){
+				dy = 1;
+				isDiagonal = true;
+            }	
+			if(keys.diagonalRightUp == KEY_LATENCY || keys.diagonalRightUp === 0){
                 dx = 1;
-            }
-
-            if(dx || dy){
-                //look for a combo: another key that was pressed during the latency
-                if(!dx){
-                    if(keys.left <= KEY_LATENCY && keys.left > 0){
-                        dx = -1;
-                    }
-                    if(keys.right <= KEY_LATENCY && keys.right > 0){
-                        dx = 1;
-                    }
-                }else{
-                    if(keys.up <= KEY_LATENCY && keys.up > 0){
-                        dy = 1;
-                    }
-                    if(keys.down <= KEY_LATENCY && keys.down > 0){
-                        dy = -1;
-                    }
-                }
-                //console.log(keys,dx,dy);
+				dy = 1;
+				isDiagonal = true;
+            }	
+		    if(keys.diagonalLeftDown == KEY_LATENCY || keys.diagonalLeftDown === 0){
+                dx = -1;
+				dy = -1;
+				isDiagonal = true;
+            }	
+			if(keys.diagonalRightDown == KEY_LATENCY || keys.diagonalRightDown === 0){
+                dx = 1;
+				dy = -1;
+				isDiagonal = true;
+            }	
+			if (isDiagonal) {
+				//console.log(keys,dx,dy);
                 movePlayer(player.row+dy, player.col+dx);
 
                 keysBlockedUntilAllUp = true;
-            }
+			} else {
+
+	            //read keys that were just released or that were pressed just a few frames ago
+	            //this leaves some time for a combination (ie: up+right)
+	            if(keys.down == KEY_LATENCY || keys.down === 0){
+	                dy = -1;
+	            }
+	            if(keys.up == KEY_LATENCY || keys.up === 0){
+	                dy = 1;
+	            }
+	            if(keys.left == KEY_LATENCY || keys.left === 0){
+	                dx = -1;
+	            }
+	            if(keys.right == KEY_LATENCY || keys.right === 0){
+	                dx = 1;
+	            }
+	
+	            if(dx || dy){
+	                //look for a combo: another key that was pressed during the latency
+	                if(!dx){
+	                    if(keys.left <= KEY_LATENCY && keys.left > 0){
+	                        dx = -1;
+	                    }
+	                    if(keys.right <= KEY_LATENCY && keys.right > 0){
+	                        dx = 1;
+	                    }
+	                }else{
+	                    if(keys.up <= KEY_LATENCY && keys.up > 0){
+	                        dy = 1;
+	                    }
+	                    if(keys.down <= KEY_LATENCY && keys.down > 0){
+	                        dy = -1;
+	                    }
+	                }
+	                //console.log(keys,dx,dy);
+	                movePlayer(player.row+dy, player.col+dx);
+	
+	                keysBlockedUntilAllUp = true;
+	            }
+			}
         }
 
         var keyName;
@@ -1658,8 +1780,8 @@ aa.add( 'checkmate', 1,
 	}
 
 	function ellipseEq(x, a, b){
-		// x²/a² + y²/b² = 1
-		// y = sqrt( (1-x²/a²)*b² )
+		// x�/a� + y�/b� = 1
+		// y = sqrt( (1-x�/a�)*b� )
 		return Math.sqrt( (1-((x*x)/(a*a)))*b*b );
 	}
 
@@ -2349,16 +2471,33 @@ aa.add( 'checkmate', 1,
 
 
 	var keyMap = {
-		37: "left", // left arrow
-		65: "left", // a
-		81: "left", // q
-		38: "up",   // up arrow
-		90: "up",	// z
-		87: "up",	// w
-		83: "down",	// d
-		40: "down",
-		39: "right",// right arrow
-		68: "right",//d
+		//movement - arrow support
+		37: "left", 			// left arrow
+		39: "right",			// right arrow
+		38: "up",   			// up arrow
+		40: "down",				// down arrow
+		//movement - extended WSAD support
+		65: "left", 			// a
+		68: "right",			// d
+		87: "up",				// w
+		83: "down",				// s
+		88: "down",				// x - support x as well for down, with adding diagonal down keys
+		81: "diagonalLeftUp", 	// q
+		69: "diagonalRightUp", 	// e
+		90: "diagonalLeftDown", // z - us keyboard layout
+		89: "diagonalLeftDown", // y - support also y diagonally left down (e.g. german keyboard layout)
+		67: "diagonalRightDown",// e
+		//movement - numeric keypad support - Keypad 0-9 is Keycode 96 to 105
+		100: "left", 			// 4
+		102: "right",			// 6
+		104: "up",   			// 8
+		101: "up",   			// 5 - so keypad can be used like WSAD-control 
+		98: "down",				// 2
+		103: "diagonalLeftUp", 	// 7
+		105: "diagonalRightUp", // 9
+		97: "diagonalLeftDown", // 1
+		99: "diagonalRightDown",// 3	
+		//other game controls	
 		32: "space",
 		27: "esc",
 		13: "enter"
