@@ -185,6 +185,119 @@ window.onload = function(){
 			'kkkkkkkk'
 		);
 		
+		//test walking
+		block(
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			'',
+			''
+		);			
 
 		//BEGIN new level
 		
@@ -2115,22 +2228,33 @@ window.onload = function(){
 
 
 	var keyMap = {
+		//movement - arrow support
 		37: "left", 			// left arrow
 		39: "right",			// right arrow
 		38: "up",   			// up arrow
 		40: "down",				// down arrow
+		//movement - extended WSAD support
 		65: "left", 			// a
 		68: "right",			// d
 		87: "up",				// w
 		83: "down",				// s
-		//support x as well, with adding diagonal down keys
-		88: "down",				// x
+		88: "down",				// x - support x as well for down, with adding diagonal down keys
 		81: "diagonalLeftUp", 	// q
 		69: "diagonalRightUp", 	// e
-		//support y and z as often used layouts
-		89: "diagonalLeftDown", // y
-		90: "diagonalLeftDown", // z
+		90: "diagonalLeftDown", // z - us keyboard layout
+		89: "diagonalLeftDown", // y - support also y diagonally left down (e.g. german keyboard layout)
 		67: "diagonalRightDown",// e
+		//movement - numeric keypad support - Keypad 0-9 is Keycode 96 to 105
+		100: "left", 			// 4
+		102: "right",			// 6
+		104: "up",   			// 8
+		101: "up",   			// 5 - so keypad can be used like WSAD-control 
+		98: "down",				// 2
+		103: "diagonalLeftUp", 	// 7
+		105: "diagonalRightUp", // 9
+		97: "diagonalLeftDown", // 1
+		99: "diagonalRightDown",// 3	
+		//other game controls	
 		32: "space",
 		27: "esc",
 		13: "enter"
