@@ -185,6 +185,7 @@ window.onload = function(){
 			'kkkkkkkk'
 		);
 
+if (false) {
 		// first pawn
 		block(
 			{showThreat:'p'},
@@ -314,9 +315,53 @@ window.onload = function(){
             ''
         );
 
-		//CHECK POINT 2
+		//CHECK POINT 2.1
         checkPoint();
+}
+		//BEGIN first new level
+		//knights only dungeon - level one - a bit tricky
+		block(
+				'',
+				'     p  ',
+				'',
+				'',
+				'',
+				'      k ',
+				'  k     ',
+				' k     k',
+				'k  k   k',
+				'k       ',
+				'      k ',
+				'',
+				'',
+				'',
+				''
+			);
 
+		// crowded dungeon - level one - rook and bishop
+		block(
+				'',
+				'',
+				'',
+				'',
+				'p p p   ',
+				' p p    ',
+				'rbrbrbrb',
+				'brbrbrbr',
+				'rbrbrbrb',
+				'brbrbrbr',
+				'rbrrrbrb',
+				'brbrbrbr',
+				' p b    ',
+				'',
+				''
+			);
+		//END first new level
+
+		//CHECK POINT 2.2
+        checkPoint();
+if (false) {
+	
 		//10 first bishop
 		block(
 			{showThreat:'b'},
@@ -410,8 +455,57 @@ window.onload = function(){
             '',
             ''
         );
+}
+        //CHECK POINT 4.1
+        checkPoint();
 
-        //CHECK POINT 4
+		//BEGIN second new level
+		//knights only dungeon - level two - tricky
+		block(
+				'',
+				'',
+				'',
+				'',
+				'   kk   ',
+				'     kk ',
+				'',
+				'     k  ',
+				'k kkk   ',
+				'',
+				'',
+				'kkk k   ',
+				'',
+				'',
+				'',
+				'',
+				''
+			);
+
+		// crowded dungeon - level two - rook, bishop and knights
+		block(
+				'',
+				'',
+				'',
+				'',
+				'brbrbrrb',
+				'rbrbrbrb',
+				'bbrrbkbr',
+				'brrbkbrb',
+				'kbbrbkrk',
+				'krrbrbrb',
+				'kkbrbrbk',
+				'kbrbrbrr',
+				'  b   b ',
+				'       b',
+				'',
+				'',
+				'',
+				'',
+				''
+			);
+		//END second new level
+		
+        //CHECK POINT 4.2
         checkPoint();
 
         //first land mine
